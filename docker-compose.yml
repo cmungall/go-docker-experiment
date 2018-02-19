@@ -1,0 +1,18 @@
+version: '3.2'
+
+services:
+  golr:
+    image: amigo-solr
+    ports:
+      - "8983:8983"
+    healthcheck:
+        test: ["CMD", "curl", "-f", "http://localhost:8983/solr"]
+        interval: 5s
+        timeout: 10s
+        retries: 5
+    volumes:
+      - ./mydata:/opt/solr/server/solr/data
+  load:
+    image: amigo-solr-loader
+    depends_on:
+      - golr
