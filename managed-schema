@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Solr managed schema - automatically generated - DO NOT EDIT -->
+<schema name="golr" version="6.6">
+  <uniqueKey>id</uniqueKey>
+  <fieldType name="boolean" class="solr.BoolField" sortMissingLast="true"/>
+  <fieldType name="booleans" class="solr.BoolField" sortMissingLast="true" multiValued="true"/>
+  <fieldType name="integer" class="solr.TrieIntField" positionIncrementGap="0" sortMissingLast="true" precisionStep="0"/>
+  <fieldType name="long" class="solr.TrieLongField"/>
+  <fieldType name="string" class="solr.StrField" sortMissingLast="true"/>
+  <fieldType name="tdates" class="solr.TrieDateField" positionIncrementGap="0" docValues="true" multiValued="true" precisionStep="6"/>
+  <fieldType name="tdoubles" class="solr.TrieDoubleField" positionIncrementGap="0" docValues="true" multiValued="true" precisionStep="8"/>
+  <fieldType name="text_searchable" class="solr.TextField" positionIncrementGap="100" sortMissingLast="true">
+    <analyzer type="index">
+      <tokenizer class="solr.StandardTokenizerFactory"/>
+      <filter class="solr.LowerCaseFilterFactory"/>
+      <filter class="solr.EdgeNGramFilterFactory" maxGramSize="15" minGramSize="3"/>
+    </analyzer>
+    <analyzer type="query">
+      <tokenizer class="solr.StandardTokenizerFactory"/>
+    </analyzer>
+  </fieldType>
+  <fieldType name="tlongs" class="solr.TrieLongField" positionIncrementGap="0" docValues="true" multiValued="true" precisionStep="8"/>
+  <field name="_version_" type="long" multiValued="false" indexed="true" stored="true"/>
+  <field name="alternate_id" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="annotation_class" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="annotation_class_label" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="annotation_class_label_searchable" type="text_searchable" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="annotation_class_list" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="annotation_class_list_label" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="annotation_class_list_map" type="string" multiValued="false" indexed="false" required="false" stored="true"/>
+  <field name="annotation_extension_class" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="annotation_extension_class_closure" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="annotation_extension_class_closure_label" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="annotation_extension_class_closure_label_searchable" type="text_searchable" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="annotation_extension_class_closure_map" type="string" multiValued="false" indexed="false" required="false" stored="true"/>
+  <field name="annotation_extension_class_label" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="annotation_extension_class_label_searchable" type="text_searchable" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="annotation_extension_json" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="annotation_extension_owl_json" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="annotation_relation" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="annotation_relation_label" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="annotation_relation_label_searchable" type="text_searchable" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="annotation_unit" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="annotation_unit_label" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="annotation_unit_label_searchable" type="text_searchable" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="annotation_value" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="aspect" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="assigned_by" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="bioentity" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="bioentity_internal_id" type="string" multiValued="false" indexed="false" required="false" stored="true"/>
+  <field name="bioentity_isoform" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="bioentity_label" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="bioentity_label_searchable" type="text_searchable" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="bioentity_list" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="bioentity_list_label" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="bioentity_list_map" type="string" multiValued="false" indexed="false" required="false" stored="true"/>
+  <field name="bioentity_name" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="bioentity_name_searchable" type="text_searchable" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="category" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="comment" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="comment_searchable" type="text_searchable" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="consider" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="contributor" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="contributor_searchable" type="text_searchable" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="database_xref" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="date" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="definition_xref" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="description" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="description_searchable" type="text_searchable" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="disjoint_class_list" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="disjoint_class_list_label" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="disjoint_class_list_label_searchable" type="text_searchable" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="disjoint_class_list_map" type="string" multiValued="false" indexed="false" required="false" stored="true"/>
+  <field name="document_category" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="enabled_by" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="enabled_by_label" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="enabled_by_label_searchable" type="text_searchable" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="enabled_by_searchable" type="text_searchable" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="entity" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="entity_label" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="entity_label_searchable" type="text_searchable" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="equivalent_class_expressions_json" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="evidence" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="evidence_closure" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="evidence_closure_label" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="evidence_closure_label_searchable" type="text_searchable" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="evidence_closure_map" type="string" multiValued="false" indexed="false" required="false" stored="true"/>
+  <field name="evidence_label" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="evidence_label_searchable" type="text_searchable" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="evidence_subset_closure" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="evidence_subset_closure_label" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="evidence_subset_closure_label_searchable" type="text_searchable" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="evidence_subset_closure_map" type="string" multiValued="false" indexed="false" required="false" stored="true"/>
+  <field name="evidence_type" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="evidence_type_closure" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="evidence_type_closure_label" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="evidence_type_closure_label_searchable" type="text_searchable" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="evidence_type_closure_map" type="string" multiValued="false" indexed="false" required="false" stored="true"/>
+  <field name="evidence_type_label" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="evidence_type_label_searchable" type="text_searchable" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="evidence_with" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="evidence_with_searchable" type="text_searchable" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="function_class" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="function_class_closure" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="function_class_closure_label" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="function_class_closure_label_searchable" type="text_searchable" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="function_class_closure_map" type="string" multiValued="false" indexed="false" required="false" stored="true"/>
+  <field name="function_class_label" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="function_class_label_searchable" type="text_searchable" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="general_blob" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="general_blob_searchable" type="text_searchable" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="geospatial_x" type="integer" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="geospatial_y" type="integer" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="geospatial_z" type="integer" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="has_participant_closure" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="has_participant_closure_label" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="has_participant_closure_label_searchable" type="text_searchable" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="has_participant_closure_map" type="string" multiValued="false" indexed="false" required="false" stored="true"/>
+  <field name="id" type="string" multiValued="false" indexed="true" required="true" stored="true"/>
+  <field name="idspace" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="is_obsolete" type="boolean" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="is_redundant_for" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="isa_partof_closure" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="isa_partof_closure_label" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="isa_partof_closure_label_searchable" type="text_searchable" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="isa_partof_closure_map" type="string" multiValued="false" indexed="false" required="false" stored="true"/>
+  <field name="location_list" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="location_list_closure" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="location_list_closure_label" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="location_list_closure_map" type="string" multiValued="false" indexed="false" required="false" stored="true"/>
+  <field name="location_list_label" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="location_list_map" type="string" multiValued="false" indexed="false" required="false" stored="true"/>
+  <field name="model" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="model_date" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="model_date_searchable" type="text_searchable" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="model_label" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="model_label_searchable" type="text_searchable" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="model_state" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="model_url" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="neighborhood_graph_json" type="string" multiValued="false" indexed="false" required="false" stored="true"/>
+  <field name="neighborhood_limited_graph_json" type="string" multiValued="false" indexed="false" required="false" stored="true"/>
+  <field name="only_in_taxon" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="only_in_taxon_closure" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="only_in_taxon_closure_label" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="only_in_taxon_closure_label_searchable" type="text_searchable" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="only_in_taxon_closure_map" type="string" multiValued="false" indexed="false" required="false" stored="true"/>
+  <field name="only_in_taxon_label" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="only_in_taxon_label_searchable" type="text_searchable" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="only_in_taxon_searchable" type="text_searchable" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="owl_blob_json" type="string" multiValued="false" indexed="false" required="false" stored="true"/>
+  <field name="panther_family" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="panther_family_label" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="panther_family_label_searchable" type="text_searchable" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="panther_family_searchable" type="text_searchable" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="phylo_graph_json" type="string" multiValued="false" indexed="false" required="false" stored="true"/>
+  <field name="process_class" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="process_class_closure" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="process_class_closure_label" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="process_class_closure_label_searchable" type="text_searchable" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="process_class_closure_map" type="string" multiValued="false" indexed="false" required="false" stored="true"/>
+  <field name="process_class_label" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="process_class_label_searchable" type="text_searchable" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="qualifier" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="reference" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="reference_searchable" type="text_searchable" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="regulates_closure" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="regulates_closure_label" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="regulates_closure_label_searchable" type="text_searchable" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="regulates_closure_map" type="string" multiValued="false" indexed="false" required="false" stored="true"/>
+  <field name="regulates_transitivity_graph_json" type="string" multiValued="false" indexed="false" required="false" stored="true"/>
+  <field name="replaced_by" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="secondary_taxon" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="secondary_taxon_closure" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="secondary_taxon_closure_label" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="secondary_taxon_closure_label_searchable" type="text_searchable" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="secondary_taxon_closure_map" type="string" multiValued="false" indexed="false" required="false" stored="true"/>
+  <field name="secondary_taxon_label" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="secondary_taxon_label_searchable" type="text_searchable" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="source" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="subset" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="synonym" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="synonym_searchable" type="text_searchable" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="taxon" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="taxon_closure" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="taxon_closure_label" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="taxon_closure_label_searchable" type="text_searchable" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="taxon_closure_map" type="string" multiValued="false" indexed="false" required="false" stored="true"/>
+  <field name="taxon_label" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="taxon_label_searchable" type="text_searchable" multiValued="false" indexed="true" required="false" stored="true"/>
+  <field name="taxon_subset_closure" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="taxon_subset_closure_label" type="string" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="taxon_subset_closure_label_searchable" type="text_searchable" multiValued="true" indexed="true" required="false" stored="true"/>
+  <field name="taxon_subset_closure_map" type="string" multiValued="false" indexed="false" required="false" stored="true"/>
+  <field name="topology_graph_json" type="string" multiValued="false" indexed="false" required="false" stored="true"/>
+  <field name="type" type="string" multiValued="false" indexed="true" required="false" stored="true"/>
+  <copyField source="annotation_class_label" dest="annotation_class_label_searchable"/>
+  <copyField source="annotation_extension_class_closure_label" dest="annotation_extension_class_closure_label_searchable"/>
+  <copyField source="annotation_extension_class_label" dest="annotation_extension_class_label_searchable"/>
+  <copyField source="annotation_relation_label" dest="annotation_relation_label_searchable"/>
+  <copyField source="annotation_unit_label" dest="annotation_unit_label_searchable"/>
+  <copyField source="bioentity_label" dest="bioentity_label_searchable"/>
+  <copyField source="bioentity_name" dest="bioentity_name_searchable"/>
+  <copyField source="comment" dest="comment_searchable"/>
+  <copyField source="contributor" dest="contributor_searchable"/>
+  <copyField source="description" dest="description_searchable"/>
+  <copyField source="disjoint_class_list_label" dest="disjoint_class_list_label_searchable"/>
+  <copyField source="enabled_by" dest="enabled_by_searchable"/>
+  <copyField source="enabled_by_label" dest="enabled_by_label_searchable"/>
+  <copyField source="entity_label" dest="entity_label_searchable"/>
+  <copyField source="evidence_closure_label" dest="evidence_closure_label_searchable"/>
+  <copyField source="evidence_label" dest="evidence_label_searchable"/>
+  <copyField source="evidence_subset_closure_label" dest="evidence_subset_closure_label_searchable"/>
+  <copyField source="evidence_type_closure_label" dest="evidence_type_closure_label_searchable"/>
+  <copyField source="evidence_type_label" dest="evidence_type_label_searchable"/>
+  <copyField source="evidence_with" dest="evidence_with_searchable"/>
+  <copyField source="function_class_closure_label" dest="function_class_closure_label_searchable"/>
+  <copyField source="function_class_label" dest="function_class_label_searchable"/>
+  <copyField source="general_blob" dest="general_blob_searchable"/>
+  <copyField source="has_participant_closure_label" dest="has_participant_closure_label_searchable"/>
+  <copyField source="isa_partof_closure_label" dest="isa_partof_closure_label_searchable"/>
+  <copyField source="model_date" dest="model_date_searchable"/>
+  <copyField source="model_label" dest="model_label_searchable"/>
+  <copyField source="only_in_taxon" dest="only_in_taxon_searchable"/>
+  <copyField source="only_in_taxon_closure_label" dest="only_in_taxon_closure_label_searchable"/>
+  <copyField source="only_in_taxon_label" dest="only_in_taxon_label_searchable"/>
+  <copyField source="panther_family" dest="panther_family_searchable"/>
+  <copyField source="panther_family_label" dest="panther_family_label_searchable"/>
+  <copyField source="process_class_closure_label" dest="process_class_closure_label_searchable"/>
+  <copyField source="process_class_label" dest="process_class_label_searchable"/>
+  <copyField source="reference" dest="reference_searchable"/>
+  <copyField source="regulates_closure_label" dest="regulates_closure_label_searchable"/>
+  <copyField source="secondary_taxon_closure_label" dest="secondary_taxon_closure_label_searchable"/>
+  <copyField source="secondary_taxon_label" dest="secondary_taxon_label_searchable"/>
+  <copyField source="synonym" dest="synonym_searchable"/>
+  <copyField source="taxon_closure_label" dest="taxon_closure_label_searchable"/>
+  <copyField source="taxon_label" dest="taxon_label_searchable"/>
+  <copyField source="taxon_subset_closure_label" dest="taxon_subset_closure_label_searchable"/>
+</schema>
