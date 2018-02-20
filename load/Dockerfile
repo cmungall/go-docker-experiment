@@ -1,4 +1,4 @@
-FROM owltools:solr6
+FROM cmungall/owltools:solr6
 
 RUN echo hi
 RUN curl -L https://raw.githubusercontent.com/geneontology/amigo/master/metadata/ont-config.yaml > ont-config.yaml
